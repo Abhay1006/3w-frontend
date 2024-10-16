@@ -3,7 +3,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import './App.css'; 
 
-const socket = io('http://localhost:5000');
+const socket = io('https://threew-backend-7n04.onrender.com');
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -13,7 +13,7 @@ function App() {
   const [newUserName, setNewUserName] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/users').then(res => {
+    axios.get('https://threew-backend-7n04.onrender.com/users').then(res => {
       setUsers(res.data);
     });
 
@@ -21,13 +21,13 @@ function App() {
       setLeaderboard(updatedUsers);
     });
 
-    axios.get('http://localhost:5000/leaderboard').then(res => {
+    axios.get('https://threew-backend-7n04.onrender.com/leaderboard').then(res => {
       setLeaderboard(res.data);
     });
   }, []);
 
   const claimPoints = () => {
-    axios.post(`http://localhost:5000/claim-points/${selectedUser}`)
+    axios.post(`https://threew-backend-7n04.onrender.com/claim-points/${selectedUser}`)
       .then(res => {
         setPointsAwarded(res.data.message);
       })
@@ -37,7 +37,7 @@ function App() {
   const addUser = (e) => {
     e.preventDefault();
     if (newUserName) {
-      axios.post('http://localhost:5000/users', { name: newUserName })
+      axios.post('https://threew-backend-7n04.onrender.com/users', { name: newUserName })
         .then(res => {
           setUsers([...users, res.data]); 
           setNewUserName(''); 
