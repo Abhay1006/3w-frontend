@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
@@ -32,7 +32,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* User Selection */
 .user-selection {
   display: flex;
   justify-content: space-between;
@@ -70,7 +69,6 @@ body {
   margin-top: 10px;
 }
 
-/* Add User Form */
 .add-user-form {
   display: flex;
   justify-content: center;
@@ -97,7 +95,6 @@ body {
   cursor: pointer;
 }
 
-/* Leaderboard */
 .leaderboard {
   list-style-type: none;
   padding: 0;
